@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="967.39807"
+   height="404.50873"
+   viewBox="0 0 255.95741 107.02627"
+   version="1.1"
+   id="svg5"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient9147">
+      <stop
+         style="stop-color:#3ab4e0;stop-opacity:1;"
+         offset="0.17391305"
+         id="stop9143" />
+      <stop
+         style="stop-color:#3ed279;stop-opacity:1;"
+         offset="0.49656752"
+         id="stop9877" />
+      <stop
+         style="stop-color:#4358cb;stop-opacity:1;"
+         offset="0.81922197"
+         id="stop9145" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient9147"
+       id="linearGradient9149"
+       x1="55.488094"
+       y1="60.32523"
+       x2="283.76956"
+       y2="152.39993"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.8482139,74.951597)" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-7.48797,-81.95353)">
+    <text
+       xml:space="preserve"
+       style="font-size:176.389px;font-family:'League Spartan';-inkscape-font-specification:'League Spartan';white-space:pre;inline-size:0;fill:url(#linearGradient9149);fill-opacity:1;stroke:#000000;stroke-width:5.80747;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       x="42.788136"
+       y="135.46666"
+       id="text236"
+       transform="matrix(1.0934194,0,0,1.0934194,-50.00879,19.167753)"><tspan
+         id="tspan234"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:105.833px;font-family:'Source Code Pro for Powerline';-inkscape-font-specification:'Source Code Pro for Powerline';fill:url(#linearGradient9149);fill-opacity:1;stroke:#000000;stroke-width:5.80747;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         x="42.788136"
+         y="135.46666">&lt;w/&gt;</tspan></text>
+  </g>
+</svg>
