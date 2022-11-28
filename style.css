@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Pacifico:regular);
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
 @font-face {
   font-family: "sofia-pro";
   src: url("https://use.typekit.net/af/5e6988/00000000000000007735a163/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
@@ -221,6 +223,37 @@ main > .hellocont {
   color: white;
 }
 
+.about > div > h2 {
+  position: relative;
+  z-index: 5;
+}
+
+.about > div > h2::before {
+  position: absolute;
+  left: -1.75rem;
+  top: -1.75rem;
+  background-color: white;
+  text-transform: uppercase;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  color: #4e4e4e;
+  overflow: visible;
+  width: auto;
+  text-align: left;
+}
+
+.sect1 > h2::before {
+  content: "languages";
+}
+
+.sect2 > h2::before {
+  content: "tools";
+}
+
+.about > div > .more {
+  display: none;
+}
+
 .sect2 > ul {
   /* list-style: none; */
   display: flex;
@@ -255,6 +288,17 @@ footer > hr {
   border-radius: 15px;
   text-align: center;
   margin-bottom: 0.5rem;
+}
+
+footer > .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 2rem;
+}
+
+footer > .content > .links > a {
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
