@@ -1,6 +1,17 @@
 const currentyeararabic = new Date().getFullYear();
 const currentyearroman = toRoman(currentyeararabic);
 
+let deviceWidth = window.innerWidth;
+let deviceHeight = window.innerHeight;
+console.log(deviceWidth);
+console.log(deviceHeight);
+window.addEventListener("resize", () => {
+  deviceWidth = window.innerWidth;
+  deviceHeight = window.innerHeight;
+  console.log(deviceWidth);
+  console.log(deviceHeight);
+});
+
 const skills = ["javascript", "typescript", "html", "css", "python", "java"];
 const tools = ["firefox", "vs code", "git", "github", "zsh", "bash", "linux"];
 let toolcounter = 0;
@@ -42,9 +53,11 @@ setTimeout(() => {
 let togglestate;
 languagediv.addEventListener("click", () => {
   let oppositestate = document.querySelector(".sect2 > .more").className == "more unhid";
-  if (!togglestate || oppositestate) {
+  if (!togglestate || (oppositestate && deviceWidth <= 768)) {
     document.querySelector(".sect1 > .more").className = "more unhid";
-    document.querySelector(".sect2 > .more").className = "more";
+    if (deviceWidth <= 768) {
+      document.querySelector(".sect2 > .more").className = "more";
+    }
     togglestate = true;
   } else {
     document.querySelector(".sect1 > .more").className = "more";
@@ -54,9 +67,11 @@ languagediv.addEventListener("click", () => {
 
 toolsdiv.addEventListener("click", () => {
   let oppositestate = document.querySelector(".sect1 > .more").className == "more unhid";
-  if (!togglestate || oppositestate) {
+  if (!togglestate || (oppositestate && deviceWidth <= 768)) {
     document.querySelector(".sect2 > .more").className = "more unhid";
-    document.querySelector(".sect1 > .more").className = "more";
+    if (deviceWidth <= 768) {
+      document.querySelector(".sect1 > .more").className = "more";
+    }
     togglestate = true;
   } else {
     document.querySelector(".sect2 > .more").className = "more";
