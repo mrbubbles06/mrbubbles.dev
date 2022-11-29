@@ -32,12 +32,19 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto 1fr auto;
+}
+
 header {
   position: absolute;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100vw;
   margin-top: 1rem;
+  grid-row: 1 / 2;
 }
 
 header > a {
@@ -100,6 +107,10 @@ li > a::after {
 
 li > a:hover::after {
   transform: scaleX(100%);
+}
+
+main {
+  grid-row: 2 / 3;
 }
 
 main > .hellocont {
@@ -205,7 +216,7 @@ main > .hellocont {
   background-color: #222222;
 }
 
-.about > div {
+.about > .sect {
   border-radius: 0.25rem;
   padding: 1rem;
   text-align: center;
@@ -217,7 +228,7 @@ main > .hellocont {
 }
 
 @media (hover: hover) {
-  .about > div:hover {
+  .about > .sect:hover {
     /* min-height: 2.5rem; */
   }
 }
@@ -227,7 +238,7 @@ main > .hellocont {
   text-align: center;
   height: min-content;
   align-self: end;
-  margin-bottom: -1rem;
+  margin-bottom: 1rem;
   color: white;
   width: fit-content;
 }
@@ -245,12 +256,12 @@ main > .hellocont {
   font-size: 1rem;
 }
 
-.about > div:not(.skillstitle) > h2 {
+.about > .sect > h2 {
   position: relative;
   z-index: 5;
 }
 
-.about > div:not(.skillstitle) > h2::before {
+.about > .sect > h2::before {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -275,7 +286,7 @@ main > .hellocont {
   color: #ffffff;
 } */
 
-.about > div:not(.skillstitle):hover > h2::before,
+.about > .sect:hover > h2::before,
 .about > .toggled > h2::before {
   translate: -50% -175% !important;
   /* min-width: 10px !important; */
@@ -299,7 +310,7 @@ main > .hellocont {
   content: "tools";
 }
 
-.about > div > .more {
+.about > .sect > .more {
   display: none;
 }
 
@@ -331,6 +342,7 @@ footer {
   place-items: center;
   background-color: #222222;
   color: white;
+  grid-row: 3 / 4;
 }
 
 footer > hr {
@@ -366,10 +378,11 @@ footer > .content > .links > a {
     gap: 1.5rem;
     align-content: center;
   }
-  .about > div:not(.skillstitle) {
+  .about > .sect {
     width: 80vw;
   }
   .skillstitle {
     grid-column: auto !important;
+    margin-bottom: 0rem !important;
   }
 }
