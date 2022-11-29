@@ -278,7 +278,7 @@ main > .hellocont {
 .about > div:not(.skillstitle):hover > h2::before,
 .about > .toggled > h2::before {
   translate: -50% -175% !important;
-  min-width: 10px !important;
+  /* min-width: 10px !important; */
 }
 
 .sect1:hover,
