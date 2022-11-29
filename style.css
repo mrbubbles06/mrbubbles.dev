@@ -57,7 +57,7 @@ header > a {
     var(--green),
     var(--darkblue) 70%
   );
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -213,33 +213,48 @@ main > .hellocont {
   min-height: 1.6rem;
   width: 40vw;
   transition: min-height 200ms ease;
+  color: transparent;
 }
 
 @media (hover: hover) {
   .about > div:hover {
-    min-height: 2.5rem;
+    /* min-height: 2.5rem; */
   }
 }
 
-.about > h2 {
+.about > .skillstitle {
   grid-column: span 2;
   text-align: center;
-  font-size: 2rem;
   height: min-content;
   align-self: end;
-  margin-bottom: 1rem;
+  margin-bottom: -1rem;
   color: white;
+  width: fit-content;
 }
 
-.about > div > h2 {
+.about > .skillstitle > h2 {
+  font-size: 2rem;
+}
+
+.about > .skillstitle > h3 {
+  color: #ffffff4e;
+  font-weight: 300;
+  margin-top: 0.2rem;
+  letter-spacing: 1ch;
+  height: min-content;
+  font-size: 1rem;
+}
+
+.about > div:not(.skillstitle) > h2 {
   position: relative;
   z-index: 5;
 }
 
-.about > div > h2::before {
+.about > div:not(.skillstitle) > h2::before {
   position: absolute;
-  left: -1.75rem;
-  top: -1.75rem;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
   background-color: white;
   text-transform: uppercase;
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -247,7 +262,33 @@ main > .hellocont {
   color: #00000070;
   overflow: visible;
   width: auto;
-  text-align: left;
+  min-width: 200px;
+  text-align: center;
+  transition: all 200ms ease;
+}
+
+/* .sect1::before {
+  content: "👇 click me";
+  position: absolute;
+  top: -1.1rem;
+  right: 0;
+  color: #ffffff;
+} */
+
+.about > div:not(.skillstitle):hover > h2::before,
+.about > .toggled > h2::before {
+  translate: -50% -175% !important;
+  min-width: 10px !important;
+}
+
+.sect1:hover,
+.toggled.sect1 {
+  color: black !important;
+}
+
+.sect2:hover,
+.toggled.sect2 {
+  color: white !important;
 }
 
 .sect1 > h2::before {
@@ -258,12 +299,12 @@ main > .hellocont {
   content: "tools";
 }
 
-.more {
+.about > div > .more {
   display: none;
 }
 
 .unhid {
-  display: block;
+  display: block !important;
 }
 
 .sect2 > ul {
@@ -275,11 +316,11 @@ main > .hellocont {
 
 .sect1 {
   background-color: var(--lightblue);
+  position: relative;
 }
 
 .sect2 {
   background-color: var(--darkblue);
-  color: white;
 }
 
 footer {
@@ -322,13 +363,13 @@ footer > .content > .links > a {
   }
   .about {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
     align-content: center;
   }
-  .about > div {
+  .about > div:not(.skillstitle) {
     width: 80vw;
   }
-  .about > h2 {
-    grid-column: auto;
+  .skillstitle {
+    grid-column: auto !important;
   }
 }

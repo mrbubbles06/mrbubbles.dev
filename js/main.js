@@ -1,19 +1,17 @@
+const skillsinterval = 1000;
+
 const currentyeararabic = new Date().getFullYear();
 const currentyearroman = toRoman(currentyeararabic);
 
 let deviceWidth = window.innerWidth;
 let deviceHeight = window.innerHeight;
-console.log(deviceWidth);
-console.log(deviceHeight);
 window.addEventListener("resize", () => {
   deviceWidth = window.innerWidth;
   deviceHeight = window.innerHeight;
-  console.log(deviceWidth);
-  console.log(deviceHeight);
 });
 
 const skills = ["javascript", "typescript", "html", "css", "python", "java"];
-const tools = ["firefox", "vs code", "git", "github", "zsh", "bash", "linux"];
+const tools = ["dev tools", "vs code", "git", "github", "zsh", "bash", "linux"];
 let toolcounter = 0;
 let skillcounter = 0;
 
@@ -32,50 +30,68 @@ copyrighttext.addEventListener("click", () => {
   }
 });
 
-setInterval(() => {
-  document.querySelector(".sect1 > h2").innerHTML = skills[skillcounter];
-  skillcounter++;
-  if (skillcounter == 6) {
-    skillcounter = 0;
-  }
-}, 1500);
+let mouseisoverlang = false;
+languagediv.addEventListener("mouseover", () => {
+  mouseisoverlang = true;
+});
+languagediv.addEventListener("mouseout", () => {
+  mouseisoverlang = false;
+});
 
-setTimeout(() => {
-  setInterval(() => {
+let mouseisovertools = false;
+toolsdiv.addEventListener("mouseover", () => {
+  mouseisovertools = true;
+});
+toolsdiv.addEventListener("mouseout", () => {
+  mouseisovertools = false;
+});
+
+setInterval(() => {
+  if (mouseisoverlang) {
+    document.querySelector(".sect1 > h2").innerHTML = skills[skillcounter];
+    skillcounter++;
+    if (skillcounter == 6) {
+      skillcounter = 0;
+    }
+  }
+}, skillsinterval);
+
+setInterval(() => {
+  if (mouseisovertools) {
     document.querySelector(".sect2 > h2").innerHTML = tools[toolcounter];
     toolcounter++;
     if (toolcounter == 7) {
       toolcounter = 0;
     }
-  }, 1500);
-}, 750);
+  }
+}, skillsinterval);
 
-let togglestate;
+let togglestatelang;
 languagediv.addEventListener("click", () => {
-  let oppositestate = document.querySelector(".sect2 > .more").className == "more unhid";
-  if (!togglestate || (oppositestate && deviceWidth <= 768)) {
-    document.querySelector(".sect1 > .more").className = "more unhid";
-    if (deviceWidth <= 768) {
-      document.querySelector(".sect2 > .more").className = "more";
-    }
-    togglestate = true;
+  console.log("clicked");
+  if (!togglestatelang) {
+    document.querySelector(".sect1 > .more").classList.add("unhid");
+    document.querySelector(".sect1").classList.add("toggled");
+    document.queryS;
+    togglestatelang = true;
   } else {
-    document.querySelector(".sect1 > .more").className = "more";
-    togglestate = false;
+    document.querySelector(".sect1 > .more").classList.remove("unhid");
+    document.querySelector(".sect1").classList.remove("toggled");
+    togglestatelang = false;
   }
 });
 
+let togglestatetool;
 toolsdiv.addEventListener("click", () => {
-  let oppositestate = document.querySelector(".sect1 > .more").className == "more unhid";
-  if (!togglestate || (oppositestate && deviceWidth <= 768)) {
-    document.querySelector(".sect2 > .more").className = "more unhid";
-    if (deviceWidth <= 768) {
-      document.querySelector(".sect1 > .more").className = "more";
-    }
-    togglestate = true;
+  console.log("clicked");
+  if (!togglestatetool) {
+    document.querySelector(".sect2 > .more").classList.add("unhid");
+    document.querySelector(".sect2").classList.add("toggled");
+    togglestatetool = true;
   } else {
-    document.querySelector(".sect2 > .more").className = "more";
-    togglestate = false;
+    document.querySelector(".sect2 > .more").classList.remove("unhid");
+    document.querySelector(".sect2").classList.remove("toggled");
+    togglestatetool = false;
   }
 });
 
