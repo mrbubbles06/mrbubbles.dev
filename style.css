@@ -210,7 +210,15 @@ main > .hellocont {
   padding: 1rem;
   text-align: center;
   height: fit-content;
+  min-height: 1.6rem;
   width: 40vw;
+  transition: min-height 200ms ease;
+}
+
+@media (hover: hover) {
+  .about > div:hover {
+    min-height: 2.5rem;
+  }
 }
 
 .about > h2 {
@@ -236,7 +244,7 @@ main > .hellocont {
   text-transform: uppercase;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   font-weight: 900;
-  color: #4e4e4e;
+  color: #00000070;
   overflow: visible;
   width: auto;
   text-align: left;
@@ -250,8 +258,12 @@ main > .hellocont {
   content: "tools";
 }
 
-.about > div > .more {
+.more {
   display: none;
+}
+
+.unhid {
+  display: block;
 }
 
 .sect2 > ul {
