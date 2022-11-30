@@ -216,8 +216,6 @@ main > .hellocont {
   height: 80vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-left: 2rem;
-  padding-right: 2rem;
   gap: 1rem;
   justify-items: center;
   background-color: var(--secondarybackground);
@@ -259,6 +257,7 @@ main > .hellocont {
   font-weight: 300;
   margin-top: 0.2rem;
   letter-spacing: 1ch;
+  margin-right: -1ch;
   height: min-content;
   font-size: 1rem;
 }
