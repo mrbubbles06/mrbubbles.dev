@@ -19,6 +19,11 @@
   --lightblue: #3ab4e0;
   --green: #3ed279;
   --darkblue: #4358cb;
+
+  --primarybackground: white;
+  --primarytext: black;
+  --secondarybackground: #222222;
+  --secondarytext: white;
 }
 
 * {
@@ -51,7 +56,7 @@ header > a {
   font-family: "Poppins", sans-serif;
   font-size: 1.75em;
   margin-left: 1rem;
-  color: black;
+  color: var(--primarytext);
   text-decoration: none;
   width: fit-content;
 }
@@ -82,7 +87,7 @@ header > ul > li {
 
 header > ul > li > a {
   text-decoration: none;
-  color: black;
+  color: var(--primarytext);
   font-family: "Poppins", sans-serif;
   position: relative;
 }
@@ -95,7 +100,7 @@ a > i {
 li > a::after {
   content: "";
   position: absolute;
-  background-color: black;
+  background-color: var(--primarytext);
   width: 100%;
   transform: scaleX(0%);
   transform-origin: left;
@@ -111,6 +116,7 @@ li > a:hover::after {
 
 main {
   grid-row: 2 / 3;
+  background-color: var(--primarybackground);
 }
 
 main > .hellocont {
@@ -132,6 +138,7 @@ main > .hellocont {
   font-size: 3em;
   text-align: left;
   animation: 500ms ease fadeleft backwards;
+  color: var(--primarytext);
 }
 
 .hello > h2 {
@@ -202,7 +209,7 @@ main > .hellocont {
 }
 
 .custom-shape-divider-bottom-1669612761 .shape-fill {
-  fill: #222222;
+  fill: var(--secondarybackground);
 }
 
 .about {
@@ -213,7 +220,7 @@ main > .hellocont {
   padding-right: 2rem;
   gap: 1rem;
   justify-items: center;
-  background-color: #222222;
+  background-color: var(--secondarybackground);
 }
 
 .about > .sect {
@@ -340,7 +347,7 @@ footer {
   padding: 1rem;
   display: grid;
   place-items: center;
-  background-color: #222222;
+  background-color: var(--secondarybackground);
   color: white;
   grid-row: 3 / 4;
 }
@@ -348,7 +355,7 @@ footer {
 footer > hr {
   width: 4rem;
   height: 2px;
-  background-color: white;
+  background-color: var(--secondarytext);
   border: 0px;
   border-radius: 15px;
   text-align: center;
@@ -363,7 +370,7 @@ footer > .content {
 }
 
 footer > .content > .links > a {
-  color: white;
+  color: var(--secondarytext);
 }
 
 @media screen and (max-width: 768px) {
@@ -384,5 +391,14 @@ footer > .content > .links > a {
   .skillstitle {
     grid-column: auto !important;
     margin-bottom: 0rem !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primarybackground: #333333;
+    --primarytext: white;
+    --secondarybackground: #222222;
+    --secondarytext: white;
   }
 }
