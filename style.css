@@ -69,6 +69,7 @@ header > a {
     var(--green),
     var(--darkblue) 70%
   );
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
