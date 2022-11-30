@@ -47,7 +47,7 @@ header {
   position: absolute;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 100vw;
+  width: 100%;
   margin-top: 1rem;
   grid-row: 1 / 2;
 }
