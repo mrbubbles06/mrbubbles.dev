@@ -11,7 +11,7 @@
     "watch:css": "onchange \"src/scss\" -- npm run build:css",
     "build:images": "imagemin src/images/**/* --out-dir=dist/images",
     "watch:images": "onchange \"src/images\" -- npm run build:images",
-    "serve": "browser-sync start --server \"dist\" --files \"dist\"",
+    "serve": "browser-sync start --server \"dist\" --files \"dist\" --browser 'firefox nightly'",
     "build:css": "npm run css:lint && npm run css:scss && npm run css:autoprefixer",
     "build:js": "webpack --mode=production",
     "watch:js": "onchange \"src/js\" -- webpack --mode=development",
@@ -19,7 +19,6 @@
     "watch:html": "onchange \"src/views\" -- npm run build:html",
     "watch": "run-p serve watch:*",
     "build": "run-p build:*"
-
   },
   "repository": {
     "type": "git",
@@ -35,6 +34,7 @@
     "@babel/preset-env": "^7.20.2",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.0",
+    "bootstrap-icons": "^1.10.2",
     "browser-sync": "^2.27.10",
     "eslint": "^8.28.0",
     "eslint-webpack-plugin": "^3.2.0",
